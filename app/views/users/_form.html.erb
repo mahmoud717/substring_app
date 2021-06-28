@@ -1,5 +1,5 @@
 <%= form_with model: @user, url: signup_path do |form| %>
-<%= form.text_field :name %>
-<%= form.email_field :email %>
+<%= form.text_field :name ,:required => true %>
+<%=form.email_field :email, :required => true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}' %>
 <%= form.submit %>
 <% end %>
