@@ -6,13 +6,18 @@ class ResultsController < ApplicationController
   end
 
   def create
-    
-    # @get_result = Result.find_by(full_string: params[:full_string], user_id: )
-    # if @get_result
-    @new_result = Result.new(full_string: params[:full_string])
+    @get_result = Result.find_by(full_string: params[:full_string], user_id: session[:user_id])
+    if @get_result
+      redirect_to result_path(params[:full_string])
+      return
+    end
+
+    @new_result = Result.new(full_string: params[:full_string], user_id: session[:user_id])
       if @new_result.save
+        p @new_result.errors.full_messages
         redirect_to result_path(params[:full_string])
       else
+        p @new_result.errors.full_messages
         render :action => "new"
       end
   end
