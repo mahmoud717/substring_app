@@ -1,7 +1,5 @@
-<h1>Results#show</h1>
-<p>Find me in app/views/results/show.html.erb</p>
-<p>
-    <%= @result.full_string %>
-    <%= @result.longest_sub %>
-    <%= @result.longest_sub_length %>
-</p>
+<div class="d-flex flex-column  justify-content-center px-5 py-5 mx-5 my-5">
+    <p><strong>Full string:</strong> <%= @result.full_string %></p>
+    <p><strong>Longest substring:</strong> <%= @result.longest_sub %></p>
+    <p><strong>Longest substring length:</strong> <%= @result.longest_sub_length %></p>
+</div>

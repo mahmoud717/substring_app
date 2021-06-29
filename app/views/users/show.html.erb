@@ -1,2 +1,14 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="d-flex flex-column  justify-content-center px-5 py-5 mx-5 my-5">
+    <h2><%= @user.name%></h2>
+    <h3>Email: <%= @user.email %></h3>
+    <h4>Previous results</h4>
+    <ul class="list-unstyled ">
+        <% @user.results.each do |el| %>
+        <li class="d-flex justify-content-between mx-5 px-5">
+            <p>Full string: <%= el.full_string%></p>
+            <p>Longest substring: <%= el.longest_sub%></p>
+            <p>longest substring length: <%= el.longest_sub_length%></p>
+        </li>
+        <%end%>
+    </ul>
+</div>

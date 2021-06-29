@@ -1,4 +1,11 @@
-<%= form_with do |form| %>
-<%= form.text_field :full_string, :required => true %>
-<%= form.submit %>
-<% end %>
+<div class="d-flex justify-content-center px-5 my-5">
+    <%= form_with html: {class: 'w-md-50 form d-flex flex-column'} do |form| %>
+
+    <div class="form-group mb-4">
+        <%= form.text_field :full_string, :required => true, class: 'form-control', id: 'inputString', placeholder: "Insert the string" %>
+    </div>
+
+    <%= form.submit "Check the string", class: 'btn btn-primary btn-lg w-md-25 align-self-center'%>
+
+    <% end %>
+</div>

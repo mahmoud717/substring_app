@@ -1,2 +1,8 @@
 @import "~bootstrap/scss/bootstrap";
-@import "../../assets/stylesheets/application.scss"
+@import "../../assets/stylesheets/application.scss";
+.form{
+    width: 60%;
+    @media screen and (max-width: 768px) {
+        width: 100%
+      }
+}

@@ -14,7 +14,7 @@ module ResultsHelper
                 arr.push(s[currentPosition])
                 currentPosition += 1
                 if biggest.length <  arr.length
-                biggest = arr 
+                biggest = arr.dup 
                 end
             end
         end

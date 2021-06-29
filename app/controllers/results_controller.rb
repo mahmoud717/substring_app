@@ -14,10 +14,8 @@ class ResultsController < ApplicationController
     @sub = LongestSubstring(params[:full_string])
     @new_result = Result.new(full_string: params[:full_string], longest_sub: @sub, longest_sub_length: @sub.length, user_id: session[:user_id])
       if @new_result.save
-        p @new_result.errors.full_messages
         redirect_to result_path(params[:full_string])
       else
-        p @new_result.errors.full_messages
         render :action => "new"
       end
   end
@@ -25,7 +23,7 @@ class ResultsController < ApplicationController
   def show 
     @result = Result.find_by(full_string: params[:string])
     if !@result
-      redirect_to new_result_path,  notice: 'This string is not solved yet'
+      redirect_to root_path, notice: 'This string is not solved yet'
     end
   end
 end

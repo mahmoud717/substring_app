@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root to: "results#new"
 
   get "/signup", to: "users#new", as: "signup"
+  get "/users/:id", to: "users#show", as: "user"
   post "/signup", to: "users#create"
 
   post '/login', to: "regestraitions#create"
