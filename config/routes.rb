@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/login', to: "regestraitions#new", as: "new_regestrations"
   get '/logout', to: "regestraitions#destroy"
 
-  get '/about', to: "pages#about"
+  get '/about', to: "static_pages#about"
 
   get '/', to: "results#new", as: "new_result"
   get '/:string', to: "results#show", as: "result"
